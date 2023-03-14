@@ -1,0 +1,2 @@
+mInventory = mInventory or {}
+

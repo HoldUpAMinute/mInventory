@@ -1,0 +1,23 @@
+function mInventory.CreateItemPopup()
+    local CursorPos = input.GetCursorPos()
+    local x, y = CursorPos.x, CursorPos.y
+    local w, h = 300, 300
+    local popup = vgui.Create("DFrame")
+    popup:SetSize(w, h)
+    popup:SetPos(x, y)
+    popup:MakePopup()
+    popup:ShowCloseButton(true)
+    popup:SetDraggable(false)
+    local EquipItem = popup:Add("DButton")
+    EquipItem:SetSize(PIXEL.Scale(100), PIXEL.Scale(20))
+    EquipItem:SetPos(PIXEL.Scale(100), PIXEL.Scale(100))
+    EquipItem:SetText("Equip")
+    local DropItem = popup:Add("DButton")
+    DropItem:SetSize(PIXEL.Scale(100), PIXEL.Scale(20))
+    DropItem:SetPos(PIXEL.Scale(100), PIXEL.Scale(100))
+    DropItem:SetText("Drop")
+    local DeleteItem = popup:Add("DButton")
+    DeleteItem:SetSize(PIXEL.Scale(100), PIXEL.Scale(20))
+    DeleteItem:SetPos(PIXEL.Scale(100), PIXEL.Scale(100))
+    DeleteItem:SetText("Delete")
+end
